@@ -4,7 +4,7 @@
 This repository contains scripts to rebalance a stock portfolio. The ratios of the stock values are given, thus the script shall calculate how many stocks to buy in order to closely match the `goal_ratio` while spending almost exactly the amount `investment`.
 
 ## Usage
-Provide a `csv` file with the structure of `dummy_data.csv`. You can run the python or Julia version of te script:
+Provide a `csv` file with the structure of `dummy_data.csv`. You can run the python or Julia version of the script:
 ```
 python3 dummy_data.csv 10000.0
 julia dummy_data.csv 10000.0
@@ -18,7 +18,7 @@ In both scripts, the mathematical idea is the same:
 - add the amount `investment` to the current value and divide it by the `goal_ratio` values to compute the theoretical values `th_share_values` that should be in the portfolio per stock
 - substract the value per stock that you already have from the `stocks` you own to get the theoretical values you want to buy per stock `th_new_values`
 - divide the theoretical values by the stock prices to obtain the theoretical number of shares to buy `th_new_shares`
-- since you can only buy whole shares and not fractions, exhaustively enumerate all possible cominations of rounding up/down and choose the combination that is the largest still below `investment`
+- since you can only buy whole shares and not fractions, exhaustively enumerate all possible combinations of rounding up/down and choose the combination that is the largest still below `investment`
 
 Although I found the Julia package `IterTools`, I was unable to find the functionality I have in the python module `itertools.product`. Consequently, I added a _hacky_ function to provide all possible roundings in Julia with `_append_combis`.
 
