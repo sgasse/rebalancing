@@ -87,7 +87,7 @@ def store_rebalanced_portfolio(portfolio: dict, path: str):
 
     """
     # Sort stocks by WKN
-    portfolio["Stocks"] = sorted(portfolio["Stocks"], key=lambda x: x["ISIN"])
+    portfolio["Stocks"] = sorted(portfolio["Stocks"], key=lambda x: x["WKN"])
 
     with open(path, "w") as file_:
         json.dump(portfolio, file_, indent=4)

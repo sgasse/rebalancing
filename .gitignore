@@ -1,2 +1,4 @@
 *.json
 .venv
+Cargo.lock
+target/*
